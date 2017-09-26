@@ -26,7 +26,6 @@
         color: $color;
         background-color: darken($background-hover, 3%);
     }
-
     &[disabled] {
         &,
         &:hover,
@@ -40,12 +39,17 @@
 /*----------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES WIDTHS */
 /*----------------------------------------------------------------------------------------------*/
-$xs-max-width: 767px;
-$sm-min-width: 768px;
-$sm-max-width: 991px;
-$md-min-width: 992px;
-$md-max-width: 1200px;
-$lg-min-width: 1200px;
+
+// Small devices (landscape phones, 576px and up)
+
+$xs-max-width: 575px;
+$sm-min-width: 576px;
+$sm-max-width: 767px;
+$md-min-width: 768px;
+$md-max-width: 991px;
+$lg-min-width: 992px;
+$lg-max-width: 1199px;
+$xl-min-width: 1200px;
 
 @mixin pure-bootstrap-respond-to($class) {
     @if $class == xs {
@@ -65,14 +69,20 @@ $lg-min-width: 1200px;
             @content;
         }
     }
-
     @elseif $class == lg {
-        @media (min-width: $lg-min-width) {
+        @media only screen and (min-width: $lg-min-width) and (max-width: $lg-max-width) {
             @content;
         }
     }
 
+    @elseif $class == xl {
+        @media (min-width: $xl-min-width) {
+            @content;
+        }
+    } 
+    
+
     @else {
-        @warn "Breakpoint mixin supports: xs, sm, md, lg";
+        @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
     }
 }

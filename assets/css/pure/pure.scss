@@ -19,10 +19,10 @@
 @import "core/card";
 @import "core/image";
 @import "core/bootstrap";
-@import "core/elements"; /*----------------------------------------------------------*/
+@import "core/elements";
+/*----------------------------------------------------------*/
 /* IMAGES */
 /*----------------------------------------------------------*/
-
 .pure-cover-image {
 	@include pure-background-image-cover();
 }
@@ -44,7 +44,8 @@
 .margin-30 {
 	margin-top: 30px;
 }
-
 .margin-60 {
 	margin-top: 60px;
+
 }
+

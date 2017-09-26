@@ -1,0 +1,103 @@
+@import "pure/pure";
+
+//Fonts
+$font: 'Raleway';
+$font2: 'sans-serif';
+$font3: 'Lato';
+
+
+@include pure-google-font($font,$font2,$font3);
+
+//Colors
+$color1 : #FAFAFA;
+$color2 : #2866AB;
+$color3 : #272121;
+$color4 : #F5B553;
+$color5 : #f2f2f2;
+
+body{
+    background-color:$color1;
+    font-family: $font, $font2;
+}
+
+.home-header{
+    background-image: url(../img/stardust.png);
+    min-height: 400px;
+
+    h1{
+        color: $color4;
+        line-height: 200px;
+        text-decoration: overline;
+        padding-bottom: 5px;
+    }
+    h2{
+        color: $color1; 
+    }
+}
+.different-title {
+    font-family: $font3;
+    text-align: center;
+}
+
+.home-box{
+   // border-bottom:1px solid $color4;
+    min-height: 180px;
+    font-size: 18px;
+    max-width: 850px;
+    margin: 0 auto;
+    img.float-sm-left {    
+        margin-right: 30px;
+        max-height: 150px;
+        display: block;
+        @include pure-bootstrap-respond-to(xs){
+            margin: 0 auto;
+            max-height: 100px;
+        }     
+    }   
+    img.float-sm-right {    
+        margin-left: 30px;
+        max-height: 150px;
+        display: block;
+        @include pure-bootstrap-respond-to(xs){
+            margin: 0 auto;
+            max-height: 100px;
+        }  
+        
+    }   
+     h5{
+        font-weight: 700;
+        color: $color2;
+        font-size: 20px;
+        margin: 25px 0px;
+        @include pure-bootstrap-respond-to(xs){
+          text-align:center;
+        }  
+        
+    }
+}
+.ready-title{
+    font-size: 25px;
+
+
+}
+.dot{
+    line-height: 35px;
+    font-size: 30px;
+}
+footer{
+    background-color: $color5;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: #555;
+    p{
+        padding: 25px;
+        margin-bottom: 0px;
+    }
+}
+.mobile-flex-box{
+    @include pure-bootstrap-respond-to(xs){
+        display: block!important;
+        text-align: center;
+   
+    }
+}
