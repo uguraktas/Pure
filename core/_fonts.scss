@@ -33,7 +33,7 @@ $pure-font-stack-monaco: ( "Monaco", "Consolas", "Lucida Console", monospace, );
 @mixin pure-font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
     $src: null;
 
-    $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") );
+    $extmods: ( eot: "?", svg: "#" + pure-string-replace($name, " ", "_") );
 
     $formats: ( otf: "opentype", ttf: "truetype" );
 
@@ -60,8 +60,7 @@ $pure-font-stack-monaco: ( "Monaco", "Consolas", "Lucida Console", monospace, );
 
     @each $font-name in $fonts {
 
-        $font-name: str-replace($font-name, " ", "+");
-
+        $font-name: pure-string-replace($font-name, " ", "+");
         $nb: $nb + 1;
         $nb-word: 0;
 
