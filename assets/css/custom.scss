@@ -1,103 +1,293 @@
 @import "pure/pure";
-
 //Fonts
 $font: 'Raleway';
 $font2: 'sans-serif';
 $font3: 'Lato';
-
-
-@include pure-google-font($font,$font2,$font3);
-
+@include pure-google-font($font, $font2, $font3);
 //Colors
-$color1 : #FAFAFA;
-$color2 : #2866AB;
-$color3 : #272121;
-$color4 : #F5B553;
-$color5 : #f2f2f2;
-
-body{
-    background-color:$color1;
+$color1: #FAFAFA;
+$color2: #5B4CB3;
+$color3: #272121;
+$color4: rgb(113, 184, 180);
+$color5: #f2f2f2;
+body {
+    background-color: $color1;
     font-family: $font, $font2;
 }
 
-.home-header{
-    background-image: url(../img/stardust.png);
-    min-height: 400px;
+.badge-pure {
+    color: $color3;
+    background-color: $color4;
+}
 
-    h1{
-        color: $color4;
+.badge-version {
+    color: #fff;
+    background-color: $color2;
+}
+
+.navbar {
+    background-color: $color1;
+    @include pure-box-shadow(1px, 1px, 1px, 1px, #C7C7C7);
+    .nav-item {
+        font-weight: 600;
+    }
+    .dropdown-menu {
+        background-color: $color1;
+        @include pure-bootstrap-respond-to(xl) {
+            min-width: 600px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            border-radius: 0;
+            padding: 5px 0!important;
+            border: 1px solid rgba(0, 0, 0, .15);
+            .dropdown-item {
+                width: 50%;
+                float: left;
+                display: inline;
+                clear: initial;
+                padding: 5px 15px;
+                font-size: 14px;
+                border-bottom: 1px solid $color5;
+                &:nth-child(odd) {
+                    border-right: 1px solid $color5;
+                }
+                &:active {
+                    background-color: $color4;
+                }
+            }
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    ul {
+        height: calc(100vh - 155px);
+        overflow-y: auto;
+        list-style: none;
+        padding-left: 0px;
+        margin: 25px 0px;
+        @include pure-scrollbar(.2em, $color2, 5px); // font-family: $font3;
+        @include pure-bootstrap-respond-to(xs) {
+            position: inherit;
+        }
+        @include pure-bootstrap-respond-to(sm) {
+            position: inherit;
+        }
+        .active {
+            &:before {
+                border-color: $color4;
+                background-color: $color4;
+            }
+        }
+        li {
+            position: relative;
+            min-width: 250px;
+            @include pure-bootstrap-respond-to(lg) {
+                min-width: 210px;
+            }
+            &:before {
+                content: " ";
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                border: 2px solid $color2;
+                left: 2px;
+                margin-top: 7px;
+                position: absolute;
+                @include pure-transition(all, 150ms);
+            }
+            &:after {
+                content: " ";
+                height: 125%;
+                width: 1px;
+                background: $color2;
+                top: 16px;
+                left: 7px;
+                position: absolute;
+            }
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+            a {
+                color: $color2;
+                text-decoration: none;
+                display: block;
+                margin: 15px 0px;
+                margin-left: 25px;
+            }
+            &:hover {
+                &:before {
+                    border-color: $color4;
+                    background-color: $color4;
+                }
+            }
+        }
+    }
+}
+
+.document-body {
+    min-height: 50vh;
+    background: #fff;
+    font-family: $font3;
+}
+
+.doc-box {
+    margin: 40px 0px;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 40px;
+    &:first-child {
+        margin-top: 40px;
+    }
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 40px;
+    }
+    h5 {
+        color: $color2;
+        font-size: 30px;
+    }
+    .detail {
+        font-size: 17px;
+        margin: 15px 0px;
+    }
+    .print-text {
+        text-align: center;
+        margin: 15px 0px;
+        font-size: 20px;
+    }
+
+    .example {
+        background-color: $color1;
+        padding: 25px;
+        border-radius: 3px;
+        border: 1px dotted #CFCFCF;
+        position: relative;
+        &:before {
+            content: 'Example';
+            position: absolute;
+            top: 1px;
+            left: 5px;
+            font-size: 10px;
+        }
+    }
+    pre {
+        margin-bottom: 0px;
+      //  overflow: hidden;
+  
+    }
+    .nav-tabs {
+        border-bottom: none;
+        .nav-link {
+            color: $color2;
+            cursor: pointer;
+        }
+    }
+    .tab-pane {
+        border: 1px solid #F1F1F1;
+        padding: 25px;
+    }
+
+}
+
+.home-header {
+    //background-image: url(../img/stardust.png);
+    min-height: 400px;
+    background-color: $color4;
+    h1 {
+        color: $color3;
         line-height: 200px;
         text-decoration: overline;
         padding-bottom: 5px;
     }
-    h2{
-        color: $color1; 
+    h2 {
+        color: $color1;
     }
 }
+
 .different-title {
     font-family: $font3;
     text-align: center;
 }
 
-.home-box{
-   // border-bottom:1px solid $color4;
+.home-box {
     min-height: 180px;
     font-size: 18px;
     max-width: 850px;
     margin: 0 auto;
-    img.float-sm-left {    
+    img.float-sm-left {
         margin-right: 30px;
         max-height: 150px;
         display: block;
-        @include pure-bootstrap-respond-to(xs){
+        @include pure-bootstrap-respond-to(xs) {
             margin: 0 auto;
             max-height: 100px;
-        }     
-    }   
-    img.float-sm-right {    
+        }
+    }
+    img.float-sm-right {
         margin-left: 30px;
         max-height: 150px;
         display: block;
-        @include pure-bootstrap-respond-to(xs){
+        @include pure-bootstrap-respond-to(xs) {
             margin: 0 auto;
             max-height: 100px;
-        }  
-        
-    }   
-     h5{
+        }
+    }
+    h5 {
         font-weight: 700;
         color: $color2;
         font-size: 20px;
         margin: 25px 0px;
-        @include pure-bootstrap-respond-to(xs){
-          text-align:center;
-        }  
-        
+        @include pure-bootstrap-respond-to(xs) {
+            text-align: center;
+        }
     }
 }
-.ready-title{
+
+.ready-title {
     font-size: 25px;
-
-
 }
-.dot{
+
+.dot {
     line-height: 35px;
     font-size: 30px;
 }
-footer{
+
+footer {
     background-color: $color5;
     border-top: 1px solid #ddd;
     text-align: center;
     color: #555;
-    p{
-        padding: 25px;
+    line-height: 45px;
+    width: 100%;
+    bottom: 0;
+    p {
+        font-size: 13px;
         margin-bottom: 0px;
     }
-}
-.mobile-flex-box{
-    @include pure-bootstrap-respond-to(xs){
-        display: block!important;
-        text-align: center;
-   
+    @include pure-bootstrap-respond-to(xl) {
+        position: fixed;
+    }
+    @include pure-bootstrap-respond-to(lg) {
+        position: fixed;
     }
 }
+
+.mobile-flex-box {
+    @include pure-bootstrap-respond-to(xs) {
+        display: block!important;
+        text-align: center;
+    }
+}
+
+/* Örnekler Başlıyor */
+.bootstrap-btn-simple {
+    @include pure-bootstrap-button-variant(#000,#71b8b4,5px,#f1f1f1);
+
+
+}
+
+
+
+

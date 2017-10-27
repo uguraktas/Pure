@@ -1,19 +1,45 @@
-
 $(function () {
 
-
-
-
-
+    //Anasayfadaki Bom yazı
     $("#js-rotating").Morphext({
-        // The [in] animation type. Refer to Animate.css for a list of available animations.
         animation: "bounceIn",
-        // An array of phrases to rotate are created based on this separator. Change it if you wish to separate the phrases differently (e.g. So Simple | Very Doge | Much Wow | Such Cool).
         separator: ",",
-        // The delay between the changing of each phrase in milliseconds.
         speed: 2000,
-        complete: function () {
-            // Called after the entrance animation is executed.
+    });
+
+    $('.example-tabs').on('click', 'a', function (e) {
+        e.preventDefault();
+        var indexOfLink = $(this).parent().parent().find('a').index($(this));
+        console.log(indexOfLink);
+        $(this).parent().parent().parent().find('.tab-content .tab-pane.active').removeClass('active')
+        $(this).parent().parent().parent().find('.tab-content .tab-pane:eq('+indexOfLink+')').addClass('active');
+    })
+
+    
+
+    // Menülere Active class'ı ekleme işlemi
+    $('.sidebar').find('a').each(function () {
+        var cUrl = String(window.location).split('?')[0];
+        if (cUrl.substr(cUrl.length - 1) == '#') {
+            cUrl = cUrl.slice(0, -1);
+        }
+        if ($($(this))[0].href == cUrl) {
+            $(this).parents('li').addClass('active');
+            // $(this).parents('li').add(this).each(function () {
+            //     $(this).parent().addClass('active');
+            // });
         }
     });
+
+
+    hljs.configure({
+        tabReplace: '   ', // 4 spaces
+    })
+    hljs.initHighlighting();
+
+
+
+
+
+
 })

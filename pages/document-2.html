@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Pure SCSS - Documents</title>
 	<!-- CSS Load Start -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-	  crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Morphext/2.4.4/morphext.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -83,7 +82,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 d-none d-lg-block">
-				<div class="sidebar ">
+				<div class="sidebar">
 					<ul>
 						<li>
 							<a href="install.html">Kurulum</a>
@@ -141,49 +140,87 @@
 						</li>
 					</ul>
 				</div>
-
 			</div>
 			<div class="col-lg-9 document-body">
 				<!-- İtem Start -->
 				<div class="doc-box">
-					<h5>Install for Rails 3.1+</h5>
+					<h5>Animation Transition</h5>
 					<p class="detail">
-						In your Gemfile:
-						<pre>
-						<code>gem 'pure-sass'</code>
-					</pre>
-						<p class="detail">
-							Then run:
-						</p>
-						<pre>
-							<code>$ bundle install</code>
-						</pre>
-						<p class="detail">
-							Restart your server. Then rename application.css to application.scss:
-						</p>
-						<pre> 
-							<code>mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss</code>
-						</pre>
-						<p class="detail">
-							Delete the sprocket directive in application.scss:
-						</p>
-						<pre>
-							<code>*= require_tree .</code>
-						</pre>
-						<p class="detail">
-							Import Pure-Sass at the beginning of application.scss. All additional stylesheets must be imported below Bourbon:
-						</p>
-						<pre> 
-							<code> @import "Pure";</code>
-						</pre>
+						Bootstrap Button'unu hızlı bir şekilde kendinize göre özelleştirebilirsiniz.
+					</p>
+					<!-- Tabs Start -->
+					<div class="example-tabs">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" role="tab" aria-expanded="true">Örnek</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" role="tab">Kullanım</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" role="tabpanel">
+								<div class="example">
+									<!-- Exampla Body Start -->
+									<a href="#" class="btn bootstrap-btn-simple">
+										Örnek
+									</a>
+									<!-- Exampla Body Finish -->
+								</div>
+							</div>
+							<div class="tab-pane" role="tabpanel">
+								<pre><code>  @include pure-transition(all, 200ms);</code></pre>
+							</div>
+						</div>
+					</div>
+					<!-- Tabs Finish -->
 				</div>
 				<!-- İtem Finish -->
+				<!-- İtem Start -->
+				<div class="doc-box">
+					<h5>Animation Keyframes</h5>
+					<p class="detail">
+						Bootstrap Button'unu hızlı bir şekilde kendinize göre özelleştirebilirsiniz.
+					</p>
+					<!-- Tabs Start -->
+					<div class="example-tabs">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" role="tab" aria-expanded="true">Örnek</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" role="tab">Kullanım</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" role="tabpanel">
+								<div class="example">
+									<!-- Exampla Body Start -->
+									<a href="#" class="btn bootstrap-btn-simple">
+										Örnek
+									</a>
+									<!-- Exampla Body Finish -->
+								</div>
+							</div>
+							<div class="tab-pane" role="tabpanel">
+								<pre><code>@include pure-keyframes(animation-name){
+		0% {
+				transform: translate3d(0, -200px, 0);
+		}
+		100% {
+				transform: translate3d(0, 0, 0);
+		}
+};</code></pre>
+							</div>
+						</div>
+					</div>
+					<!-- Tabs Finish -->
+				</div>
+				<!-- İtem Finish -->
+
 			</div>
 		</div>
 	</div>
-
-
-
 
 	<!-- Footer Start -->
 	<footer>
@@ -191,15 +228,16 @@
 	</footer>
 	<!-- Footer Finish -->
 	<!-- JS Load Start -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Morphext/2.4.4/morphext.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scss.min.js"></script>
 	<script src="../assets/js/custom.js"></script>
 	<!-- JS Load Finish -->
 </body>
+
 
 
 </html>
