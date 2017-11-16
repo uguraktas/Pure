@@ -291,6 +291,16 @@
     }
 }
 
+// example  @include pure-short-text(355px);
+@mixin pure-short-text($width){
+    width:$width;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+ }
+ 
+
+// sayfaya Smoot Görüntü Verir
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
