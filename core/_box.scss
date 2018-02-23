@@ -1,14 +1,4 @@
-﻿/*----------------------------------------------------------------------------------------------*/
-/*  PURE SCSS LIBRARY                                                                           */
-/*----------------------------------------------------------------------------------------------*/
-/*                                                                                              */
-/*  Name    :   Box                                                                             */
-/*  Version :   1.0.0                                                                           */
-/*  Git     :   https://github.com/TuruncuInternetSolutions/pure.git                            */
-/*                                                                                              */
-/*  by Turuncu Internet Solutions                                                               */
-/*  www.turuncuweb.net                                                                          */
-/*                                                                                              */
+﻿
 /*----------------------------------------------------------------------------------------------*/
 @mixin pure-box($orient: horizontal, $pack: center, $align: center) {
     display: -webkit-box;

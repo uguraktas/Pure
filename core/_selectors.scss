@@ -1,31 +1,4 @@
-﻿/*----------------------------------------------------------------------------------------------*/
-/*  PURE SCSS LIBRARY                                                                           */
-/*----------------------------------------------------------------------------------------------*/
-/*                                                                                              */
-/*  Name    :   Selectors                                                                       */
-/*  Version :   1.0.0                                                                           */
-/*  Git     :   https://github.com/TuruncuInternetSolutions/pure.git                            */
-/*                                                                                              */
-/*  by Turuncu Internet Solutions                                                               */
-/*  www.turuncuweb.net                                                                          */
-/*                                                                                              */
-/*----------------------------------------------------------------------------------------------*/
-/*
- .tabs {
-     .tab {
-         background: red;
-         &:hover {
-             background: white;
-         }
-         .tab-link {
-             color: white;
-             @include pure-select-context('.tab', '.tab:hover') {
-                 color: red;
-             }
-         }
-     }
- }
-*/
+﻿
 /*----------------------------------------------------------------------------------------------*/
 @mixin pure-select-context($old-context, $new-context) {
     @at-root #{selector-replace(&, $old-context, $new-context)} {
